@@ -1,23 +1,23 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "yasayan-ayetler",
+    "slug": "yasayan-ayetler",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "scheme": "myapp",
+    "scheme": "yasayan-ayetler",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.myapp"
+      "bundleIdentifier": "com.yasayanayetler"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.myapp"
+      "package": "com.yasayanayetler"
     },
     "web": {
       "favicon": "./assets/favicon.png"

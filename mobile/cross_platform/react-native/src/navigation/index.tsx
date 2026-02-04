@@ -13,6 +13,12 @@ import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 import { Updates } from './screens/Updates';
 import { NotFound } from './screens/NotFound';
+import { OnboardingWelcome } from './screens/onboarding/OnboardingWelcome';
+import { OnboardingName } from './screens/onboarding/OnboardingName';
+import { OnboardingHeartCheck } from './screens/onboarding/OnboardingHeartCheck';
+import { OnboardingJourneyStyle } from './screens/onboarding/OnboardingJourneyStyle';
+import { OnboardingReflectionStyle } from './screens/onboarding/OnboardingReflectionStyle';
+import { OnboardingTransition } from './screens/onboarding/OnboardingTransition';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
@@ -51,7 +57,44 @@ const HomeTabs = createBottomTabNavigator({
 });
 
 const RootStack = createNativeStackNavigator({
+  initialRouteName: 'OnboardingWelcome',
   screens: {
+    OnboardingWelcome: {
+      screen: OnboardingWelcome,
+      options: {
+        headerShown: false,
+      },
+    },
+    OnboardingName: {
+      screen: OnboardingName,
+      options: {
+        headerShown: false,
+      },
+    },
+    OnboardingHeartCheck: {
+      screen: OnboardingHeartCheck,
+      options: {
+        headerShown: false,
+      },
+    },
+    OnboardingJourneyStyle: {
+      screen: OnboardingJourneyStyle,
+      options: {
+        headerShown: false,
+      },
+    },
+    OnboardingReflectionStyle: {
+      screen: OnboardingReflectionStyle,
+      options: {
+        headerShown: false,
+      },
+    },
+    OnboardingTransition: {
+      screen: OnboardingTransition,
+      options: {
+        headerShown: false,
+      },
+    },
     HomeTabs: {
       screen: HomeTabs,
       options: {
