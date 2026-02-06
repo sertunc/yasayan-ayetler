@@ -1,26 +1,12 @@
-import * as React from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {
-  Animated,
-  KeyboardAvoidingView,
-  Platform,
-  Pressable,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
-import {
-  BodyText,
-  HelperText,
-  OptionButton,
-  PrimaryButton,
-  ScreenContainer,
-  SectionSubtitle,
-  SectionTitle,
-  Spacer,
-} from './components';
-import { colors } from './styles';
+import { Animated, KeyboardAvoidingView, Platform, Pressable, StyleSheet, Text, TextInput, View, } from 'react-native';
+
+import { ScreenContainer } from '../components/ScreenContainer';
+import { Spacer } from '../components/Spacer';
+import { BodyText, HelperText, SectionTitle, SectionSubtitle } from '../components/texts';
+import { PrimaryButton, OptionButton } from '../components/buttons';
+import { colors } from '../../styles';
 
 const HEART_OPTIONS = [
   '🌿 Sabır',
@@ -46,19 +32,18 @@ const REFLECTION_OPTIONS = [
 
 const TOTAL_STEPS = 6;
 
-export function OnboardingFlow() {
+export function Onboarding() {
   const navigation = useNavigation<any>();
-  const [step, setStep] = React.useState(0);
-  const [name, setName] = React.useState('');
-  const [heartNeed, setHeartNeed] = React.useState<string | null>(null);
-  const [journeyStyle, setJourneyStyle] = React.useState<string | null>(null);
-  const [reflectionStyle, setReflectionStyle] = React.useState<string | null>(
-    null
-  );
 
-  const pulse = React.useRef(new Animated.Value(0.3)).current;
+  const [step, setStep] = useState(0);
+  const [name, setName] = useState('');
+  const [heartNeed, setHeartNeed] = useState<string | null>(null);
+  const [journeyStyle, setJourneyStyle] = useState<string | null>(null);
+  const [reflectionStyle, setReflectionStyle] = useState<string | null>(null);
 
-  React.useEffect(() => {
+  const pulse = useRef(new Animated.Value(0.3)).current;
+
+  useEffect(() => {
     if (step !== TOTAL_STEPS - 1) {
       return;
     }

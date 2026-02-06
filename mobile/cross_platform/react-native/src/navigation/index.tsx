@@ -1,19 +1,17 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { HeaderButton, Text } from '@react-navigation/elements';
-import {
-  createStaticNavigation,
-  StaticParamList,
-} from '@react-navigation/native';
+import { createStaticNavigation, StaticParamList, } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Image } from 'react-native';
 import bell from '../assets/bell.png';
 import newspaper from '../assets/newspaper.png';
+
+import { Onboarding } from './screens/Onboarding';
 import { Home } from './screens/Home';
 import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 import { Updates } from './screens/Updates';
 import { NotFound } from './screens/NotFound';
-import { OnboardingFlow } from './screens/onboarding/OnboardingFlow';
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
@@ -52,10 +50,10 @@ const HomeTabs = createBottomTabNavigator({
 });
 
 const RootStack = createNativeStackNavigator({
-  initialRouteName: 'OnboardingFlow',
+  initialRouteName: 'Onboarding',
   screens: {
-    OnboardingFlow: {
-      screen: OnboardingFlow,
+    Onboarding: {
+      screen: Onboarding,
       options: {
         headerShown: false,
       },
@@ -108,6 +106,6 @@ type RootStackParamList = StaticParamList<typeof RootStack>;
 
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RootStackParamList { }
   }
 }
